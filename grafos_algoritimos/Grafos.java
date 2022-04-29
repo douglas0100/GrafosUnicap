@@ -5,23 +5,23 @@ import java.util.Queue;
 
 public class Grafos {
     public static void main(String[] args) {
-        LinkedList<Vertice> grafos = new LinkedList<>();
+        LinkedList<Vertice> grafo = new LinkedList<>();
     }
 
-    public static void bfs(LinkedList<Vertice> grafos, Vertice vertice){
+    public static void bfs(LinkedList<Vertice> grafo, Vertice vertice){
 
         Queue<Vertice> fila = new LinkedList<Vertice>();
         
         //int idVertice = vertice.getId();
 
-        for (Vertice verticeAtual : grafos) {
+        for (Vertice verticeAtual : grafo) {
             verticeAtual.setCor("BRANCO");
             verticeAtual.setDistancia(Double.POSITIVE_INFINITY);
             verticeAtual.setAnterior(null);
         }
 
-
         vertice.setCor("CINZA");
+        vertice.setDistancia(0.0);
         
         fila.add(vertice);
 
@@ -59,7 +59,5 @@ public class Grafos {
             cor[u] = PRETO;
 
     */
-
-
     
 }
