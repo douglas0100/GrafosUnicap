@@ -4,15 +4,16 @@ import java.util.LinkedList;
 
 public class Vertice {
     
-    //private int id;
+    private int id;
 
     private String cor;
     private double distancia;
-    private LinkedList<Vertice> adjacentes;
     private Vertice anterior;
+    private LinkedList<Vertice> adjacentes;
+    private LinkedList<String> pontos;
 
     public Vertice(){
-        //id++;
+        id++;
     }
 
     public String getCor(){
@@ -39,9 +40,9 @@ public class Vertice {
         this.anterior = anterior;
     }
 
-    /* public int getId() {
+    public int getId() {
         return this.id;
-    } */
+    }
 
     public LinkedList<Vertice> getAdjacentes() {
         return adjacentes;
@@ -50,6 +51,15 @@ public class Vertice {
     public void addAdjacente(Vertice adjacente){
         this.adjacentes.add(adjacente);
         adjacente.addAdjacente(this);
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if(!(object instanceof Vertice)) {
+            return false;
+        }
+        Vertice anotherVertice = (Vertice) object;
+        return this.id == anotherVertice.id;
     }
 
 }

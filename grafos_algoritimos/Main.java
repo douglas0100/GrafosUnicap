@@ -3,18 +3,20 @@ package grafos_algoritimos;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Grafos {
+public class Main {
     public static void main(String[] args) {
-        LinkedList<Vertice> grafo = new LinkedList<>();
+        //LinkedList<Vertice> grafo = new LinkedList<Vertice>();
+        Grafo grafo = new Grafo();
+        
     }
 
-    public static void bfs(LinkedList<Vertice> grafo, Vertice vertice){
+    public static void bfs(Grafo grafo, Vertice vertice){
 
         Queue<Vertice> fila = new LinkedList<Vertice>();
         
         //int idVertice = vertice.getId();
 
-        for (Vertice verticeAtual : grafo) {
+        for (Vertice verticeAtual : grafo.getVertices()) {
             verticeAtual.setCor("BRANCO");
             verticeAtual.setDistancia(Double.POSITIVE_INFINITY);
             verticeAtual.setAnterior(null);
